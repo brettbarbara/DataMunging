@@ -16,6 +16,13 @@ namespace DataMunging
             string smallScoreSpread = dataMunging.FootballTeamWithSmallestSpread();
             Console.WriteLine(smallScoreSpread);
 
+
+            //so here, since I kinda did this on the fly there are other things I could've done here to make this more 'generic'
+            //first of all, I probably should've made FileRead interface, and defined specific methods under the class
+            //to call specific file read methods
+            //Then maybe an arithmatic interface to do the difference? Or even an interface like fileArithmatic interface that inherits
+            //from FileRead, just incase we need to redefine any methods to fine tune the class. 
+            //regardless, the code is simplified. you do a few more method calls, but that's the goal essentially.  
             //for weather
             var weatherArrayOfRows = dataMunging.ReadInFileToRowArrays(@"C:\weather.dat");
             var weatherSmallestRow = dataMunging.GetRowWithSmallestDifferenceInValues(1,2,weatherArrayOfRows, 0);
